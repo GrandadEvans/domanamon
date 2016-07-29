@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace TLDMONMAN\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

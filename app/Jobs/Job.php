@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs;
+namespace TLDMONMAN\Jobs;
 
 use Illuminate\Bus\Queueable;
 
