@@ -1,5 +1,8 @@
 language: php
 
+sudo: required
+dist: trusty
+
 php:
   - 7.0
 
@@ -11,7 +14,7 @@ install:
 script: phpunit --coverage-html ./tests/php/coverage/html
 
 after_success:
-- ping http://domanamon.com/Deploy.php
+- ping http://www.domanamon.com/Deploy.php
 
 git:
   depth: 3
