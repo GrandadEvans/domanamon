@@ -1,0 +1,30 @@
+language: php
+
+php:
+  - 7.0
+
+install:
+  - php70 composer install
+  - npm install
+  - gulp install
+
+script: phpunit --coverage-html ./tests/php/coverage/html
+
+after_success:
+- ping http://domanamon.com/Deploy.php
+
+git:
+  depth: 3
+
+notifications:
+  email:
+    - john@domanamon.com
+
+#after_failure:
+#after_script:
+#before_deploy:
+#deploy:
+#after_deploy:
+#before_script:
+#apt-addons:
+#before_install:
