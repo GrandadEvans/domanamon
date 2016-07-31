@@ -4,9 +4,9 @@ php:
   - 7.0
 
 install:
-  - php70 composer install
+  - composer install
   - npm install
-  - gulp install
+  - gulp
 
 script: phpunit --coverage-html ./tests/php/coverage/html
 
