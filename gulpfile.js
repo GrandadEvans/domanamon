@@ -13,5 +13,7 @@ require('laravel-elixir-copy-fonts');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix
+        .sass('app.scss')
+        .copy('./resources/images', './public/images/');
 });
