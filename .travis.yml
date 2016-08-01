@@ -17,7 +17,7 @@ after_success:
 - ping http://www.domanamon.com/Deploy.php
 
 git:
-  depth: 3
+  depth: 1
 
 notifications:
   email:
