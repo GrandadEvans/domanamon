@@ -1,5 +1,5 @@
 var elixir = require('laravel-elixir');
-require('laravel-elixir-copy-fonts');
+// require('laravel-elixir-copy-fonts');
 
 /*
  |--------------------------------------------------------------------------
