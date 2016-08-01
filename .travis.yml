@@ -5,7 +5,7 @@ dist: trusty
 
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install -y lynx notify-send
+  - sudo apt-get install -y lynx
 
 php:
   - 7.0
