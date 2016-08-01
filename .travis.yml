@@ -3,9 +3,8 @@ language: php
 sudo: required
 dist: trusty
 
-apt-addons:
-  - lynx
-  - notify-send
+before_install:
+  - sudo apt-get install -y lynx notify-send
 
 php:
   - 7.0
@@ -34,4 +33,3 @@ notifications:
 #deploy:
 #after_deploy:
 #before_script:
-#before_install:
