@@ -1,4 +1,6 @@
-# tld-mon-man
+[![Build Status](https://travis-ci.org/GrandadEvans/domanamon.svg?branch=master)](https://travis-ci.org/GrandadEvans/domanamon)
+
+# Domanamon
 ## Domain management tool
 
 ### The plan
