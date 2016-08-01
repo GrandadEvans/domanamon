@@ -31,14 +31,24 @@
             }
 
             .title {
-                font-size: 70px;
+                font-size: 4rem;
+            }
+
+            img {
+                max-width: 920px;
+                max-height: 920px;
+                width: 60%;
+                height: 60%;
             }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">DOMANAMON.COM - <strong>DOM</strong>ain M<strong>an</strong>agement <strong>A</strong>nd <strong>Mon</strong>itoring</div>
+                <div class="title">
+                    DOMANAMON.COM<br />
+                    <strong>DOM</strong>ain M<strong>an</strong>agement <strong>A</strong>nd <strong>Mon</strong>itoring
+                </div>
                 <img src="/images/Domanamon-logo-full.png" alt="Domanamon Logo" />
             </div>
         </div>
