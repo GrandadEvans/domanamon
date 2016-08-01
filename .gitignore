@@ -1,8 +1,9 @@
-/vendor/
-/node_modules/
-/public/storage/
-/resources/keys/
-Homestead.yaml
-Homestead.json
-.env
 .idea/
+vendor/
+node_modules/
+storage/
+resources/keys/
+.env
+php.ini
+php_errorlog
+php70

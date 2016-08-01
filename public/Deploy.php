@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 /**
  * GIT DEPLOYMENT SCRIPT
  *
@@ -10,7 +8,7 @@ declare(strict_types = 1);
  *        https://gist.github.com/1809044
  */
 // The commands
-$commands = [
+$commands = array(
     'echo $PWD',
     'whoami',
     'git pull',
@@ -18,7 +16,7 @@ $commands = [
     'git submodule sync',
     'git submodule update',
     'git submodule status',
-];
+);
 
 // Run the commands for output
 $output = '';
@@ -39,11 +37,11 @@ foreach($commands as $command){
 </head>
 <body style="background-color: #000000; color: #FFFFFF; font-weight: bold; padding: 0 10px;">
 <pre>
-.  ____  .    ____________________________
-|/      \|   |                            |
-[| <span style="color: #FF0000;">&hearts;    &hearts;</span> |]  | Git Deployment Script v0.1 |
-|___==___|  /              &copy; oodavid 2012 |
-          |____________________________|
+ .  ____  .   _____________________________
+ |/      \|  |                             |
+[| <span style="color: #FF0000;">&hearts;    &hearts;</span> |] | Git Deployment Script v0.1  |
+ |___==___|__/              &copy; oodavid 2012 |
+          |________________________________|
 
 <?php echo $output; ?>
 </pre>
