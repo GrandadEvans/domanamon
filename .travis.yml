@@ -14,7 +14,8 @@ install:
 script: phpunit --coverage-html ./tests/php/coverage/html
 
 after_success:
-- ping http://www.domanamon.com/Deploy.php
+  - clear
+  - lynx -dump http://www.domanamon.com/Deploy.php
 
 git:
   depth: 1

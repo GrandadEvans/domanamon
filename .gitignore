@@ -2,6 +2,10 @@
 vendor/
 node_modules/
 storage/
+public/js/
+public/css/
+public/images/
+public/fonts/
 resources/keys/
 .env
 php.ini
