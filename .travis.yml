@@ -21,6 +21,7 @@ php:
   - 7.0
 
 install:
+  - mv .env_travis .env
   - composer install
   - php artisan key:generate
   - php artisan optimize
