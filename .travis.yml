@@ -28,6 +28,11 @@ notifications:
   email:
     - john@domanamon.com
 
+branches:
+  only:
+    - master
+    - stable
+    
 #after_failure:
 #after_script:
 #before_deploy:
