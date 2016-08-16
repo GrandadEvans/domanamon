@@ -27,7 +27,7 @@
             "database"
         ],
         "psr-4": {
-            "TLDMONMAN\\": "app/",
+            "Domanamon\\": "app/",
             "Tests\\": "tests/php/tests/"
         }
     },

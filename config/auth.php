@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => TLDMONMAN\User::class,
+            'model' => Domanamon\User::class,
         ],
 
         // 'users' => [

@@ -1,6 +1,6 @@
 <?php
 
-namespace TLDMONMAN\Events;
+namespace Domanamon\Events;
 
 abstract class Event
 {

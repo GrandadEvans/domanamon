@@ -1,6 +1,6 @@
 <?php
 
-namespace TLDMONMAN\Console\Commands;
+namespace Domanamon\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

@@ -1,6 +1,6 @@
 <?php
 
-namespace TLDMONMAN\Http\Requests;
+namespace Domanamon\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

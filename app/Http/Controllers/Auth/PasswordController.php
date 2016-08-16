@@ -1,8 +1,8 @@
 <?php
 
-namespace TLDMONMAN\Http\Controllers\Auth;
+namespace Domanamon\Http\Controllers\Auth;
 
-use TLDMONMAN\Http\Controllers\Controller;
+use Domanamon\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

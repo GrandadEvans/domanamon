@@ -1,10 +1,10 @@
 <?php
 
-namespace TLDMONMAN\Http\Controllers\Auth;
+namespace Domanamon\Http\Controllers\Auth;
 
-use TLDMONMAN\User;
+use Domanamon\User;
 use Validator;
-use TLDMONMAN\Http\Controllers\Controller;
+use Domanamon\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

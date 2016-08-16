@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(TLDMONMAN\User::class, function (Faker\Generator $faker) {
+$factory->define(Domanamon\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->safeEmail,

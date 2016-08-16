@@ -1,6 +1,6 @@
 <?php
 
-namespace TLDMONMAN\Providers;
+namespace Domanamon\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'TLDMONMAN\Events\SomeEvent' => [
-            'TLDMONMAN\Listeners\EventListener',
+        'Domanamon\Events\SomeEvent' => [
+            'Domanamon\Listeners\EventListener',
         ],
     ];
 
