@@ -1,2 +1,46 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+  //color: black;
+}
+
+.container {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.content {
+  text-align: center;
+  display: inline-block;
+}
+
+.title {
+  font-size: 4rem;
+}
+
+img {
+  max-width: 920px;
+  max-height: 920px;
+  width: 60%;
+  height: 60%;
+}
+
+.navbar-brand {
+  height: auto;
+}
+.navbar-logo {
+  height: 30%;
+  width: 30%;
+}
+
+.fa-btn {
+  margin-right: 6px;
+}
