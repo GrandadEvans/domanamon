@@ -9,21 +9,14 @@
  */
 // The commands
 $commands = array(
-    'cd /home/domanamo/public_html/john/domanamon',
-    'git checkout stable',
-    'git pull',
-    'git status',
+
 );
 
 // Run the commands for output
-$output = '';
-foreach($commands as $command){
-    // Run it
-    $tmp = shell_exec($command);
-    // Output
-    $output .= "<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #729FCF;\">{$command}\n</span>";
-    $output .= htmlentities(trim($tmp)) . "\n";
-}
+$command = 'cd /home/domanamo/public_html/john/domanamon && git status && git log -1 && git checkout stable && git pull && git status && git log -1';
+$tmp = shell_exec($command);
+$output .= "<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #729FCF;\">{$command}\n</span>";
+$output .= htmlentities(trim($tmp)) . "\n";
 // Make it pretty for manual user access (and why not?)
 ?>
 <!DOCTYPE HTML>
