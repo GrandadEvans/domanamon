@@ -6,3 +6,4 @@ resources/keys/
 .env
 php.ini
 php_errorlog
+/.htaccess
