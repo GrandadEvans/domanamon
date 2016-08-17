@@ -10,7 +10,8 @@
 // The commands
 $commands = array(
     'cd /home/domanamo/public_html/john/domanamon',
-    'git pull stable',
+    'git checkout stable',
+    'git pull',
     'git status',
 //    'git submodule sync',
 //    'git submodule update',
