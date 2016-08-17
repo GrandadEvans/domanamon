@@ -1,11 +1,3 @@
-<?php
-
-$command = 'cd /home/domanamo/public_html/john/domanamon && git status && git log -1 && git checkout stable && git pull && git status && git log -1';
-$tmp = shell_exec($command);
-$output .= "<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #729FCF;\">{$command}\n</span>";
-$output .= htmlentities(trim($tmp)) . "\n";
-// Make it pretty for manual user access (and why not?)
-?>
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -20,7 +12,7 @@ $output .= htmlentities(trim($tmp)) . "\n";
  |___==___|__/              &copy; oodavid 2012 |
           |________________________________|
 
-<?php echo $output; ?>
+<?php echo shell_exec('/usr/local/bin/bash git-pull.sh'); ?>
 </pre>
 </body>
 </html>
