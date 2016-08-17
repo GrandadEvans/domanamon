@@ -1,18 +1,5 @@
 <?php
 
-/**
- * GIT DEPLOYMENT SCRIPT
- *
- * Used for automatically deploying websites via github or bitbucket, more deets here:
- *
- *        https://gist.github.com/1809044
- */
-// The commands
-$commands = array(
-
-);
-
-// Run the commands for output
 $command = 'cd /home/domanamo/public_html/john/domanamon && git status && git log -1 && git checkout stable && git pull && git status && git log -1';
 $tmp = shell_exec($command);
 $output .= "<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #729FCF;\">{$command}\n</span>";
