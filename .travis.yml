@@ -29,7 +29,7 @@ script: phpunit --coverage-html ./tests/php/coverage/html
 
 after_success:
   - clear
-  - lynx -dump http://domanamon.com/Deploy.php
+  - lynx -dump https://domanamon.com/Deploy.php
 
 git:
   depth: 1
