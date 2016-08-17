@@ -13,7 +13,7 @@ Trait CommonTrait
      *
      * @var string
      */
-    protected $baseUrl = 'http://tld-mon-man.dev';
+    protected $baseUrl = 'http://domanamon.dev';
 
     /**
      * Creates the application.
@@ -28,4 +28,5 @@ Trait CommonTrait
 
         return $app;
     }
+
 }
