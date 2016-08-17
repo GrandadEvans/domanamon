@@ -1,10 +1,10 @@
 <?php
 
-namespace TLDMONMAN\Http\Controllers\Auth;
+namespace Domanamon\Http\Controllers\Auth;
 
-use TLDMONMAN\User;
+use Domanamon\User;
 use Validator;
-use TLDMONMAN\Http\Controllers\Controller;
+use Domanamon\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -51,7 +51,7 @@ class AuthController extends Controller
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'required|min:8|confirmed',
         ]);
     }
 

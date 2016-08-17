@@ -1,5 +1,5 @@
 {
-    "name": "grandadevans/tld-mon-man",
+    "name": "grandadevans/domanamon",
     "description": "Domain Monitoring and Management",
     "keywords": ["domain", "tld"],
     "license": "GNU GPL3",
@@ -27,7 +27,7 @@
             "database"
         ],
         "psr-4": {
-            "TLDMONMAN\\": "app/",
+            "Domanamon\\": "app/",
             "Tests\\": "tests/php/tests/"
         }
     },

@@ -1,6 +1,6 @@
 <?php
 
-namespace TLDMONMAN\Exceptions;
+namespace Domanamon\Exceptions;
 
 use Exception;
 use Illuminate\Validation\ValidationException;

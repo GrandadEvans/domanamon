@@ -1,6 +1,6 @@
 <?php
 
-namespace TLDMONMAN;
+namespace Domanamon;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 

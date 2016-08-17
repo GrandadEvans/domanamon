@@ -34,7 +34,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => TLDMONMAN\User::class,
+        'model' => Domanamon\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

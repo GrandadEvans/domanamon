@@ -1,6 +1,6 @@
 <?php
 
-namespace TLDMONMAN\Http\Middleware;
+namespace Domanamon\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

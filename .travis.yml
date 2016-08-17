@@ -3,6 +3,20 @@ language: php
 sudo: required
 dist: trusty
 
+services:
+  - mysql
+
+addons:
+  apt:
+    packages:
+    - mysql-server-5.6
+    - mysql-client-core-5.6
+    - mysql-client-5.6
+    - lynx
+
+before_install:
+  - mysql -u root -e 'create database domanamon_test;'
+
 php:
   - 7.0
 
@@ -14,7 +28,8 @@ install:
 script: phpunit --coverage-html ./tests/php/coverage/html
 
 after_success:
-- ping http://www.domanamon.com/Deploy.php
+  - clear
+  - lynx -dump http://domanamon.com/Deploy.php
 
 git:
   depth: 1
@@ -23,11 +38,14 @@ notifications:
   email:
     - john@domanamon.com
 
+branches:
+  only:
+    - master
+    - stable
+    
 #after_failure:
 #after_script:
 #before_deploy:
 #deploy:
 #after_deploy:
 #before_script:
-#apt-addons:
-#before_install:

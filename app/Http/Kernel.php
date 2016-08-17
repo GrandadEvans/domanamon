@@ -1,6 +1,6 @@
 <?php
 
-namespace TLDMONMAN\Http;
+namespace Domanamon\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -24,11 +24,11 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \TLDMONMAN\Http\Middleware\EncryptCookies::class,
+            \Domanamon\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \TLDMONMAN\Http\Middleware\VerifyCsrfToken::class,
+            \Domanamon\Http\Middleware\VerifyCsrfToken::class,
         ],
 
         'api' => [
@@ -44,10 +44,10 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \TLDMONMAN\Http\Middleware\Authenticate::class,
+        'auth' => \Domanamon\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
-        'guest' => \TLDMONMAN\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \Domanamon\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
 }

@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    TLDMONMAN\Http\Kernel::class
+    Domanamon\Http\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    TLDMONMAN\Console\Kernel::class
+    Domanamon\Console\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    TLDMONMAN\Exceptions\Handler::class
+    Domanamon\Exceptions\Handler::class
 );
 
 /*

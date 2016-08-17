@@ -153,10 +153,10 @@ return [
         /*
          * Application Service Providers...
          */
-        TLDMONMAN\Providers\AppServiceProvider::class,
-        TLDMONMAN\Providers\AuthServiceProvider::class,
-        TLDMONMAN\Providers\EventServiceProvider::class,
-        TLDMONMAN\Providers\RouteServiceProvider::class,
+        Domanamon\Providers\AppServiceProvider::class,
+        Domanamon\Providers\AuthServiceProvider::class,
+        Domanamon\Providers\EventServiceProvider::class,
+        Domanamon\Providers\RouteServiceProvider::class,
 
     ],
 
