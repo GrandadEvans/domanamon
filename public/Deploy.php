@@ -2,11 +2,6 @@
 <?php
 echo shell_exec('
     cd ../
-    echo -e "echo -e \$PWD"
-    echo    "============="
-    echo -e $PWD"\n"
-    echo
-    
     echo "git log -1"
     echo "=========="
     git log -1 
