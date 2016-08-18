@@ -1,17 +1,7 @@
 <pre>
 <?php
-
 echo shell_exec('
-    echo -e "echo \$PWD"
-    echo    "=========="
-    echo $PWD
-    echo
-
-    echo "cd ../"
-    echo "======"
     cd ../
-    echo
-
     echo -e "echo -e \$PWD"
     echo    "============="
     echo -e $PWD"\n"
