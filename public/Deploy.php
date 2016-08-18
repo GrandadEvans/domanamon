@@ -23,5 +23,12 @@ if (array_key_exists('branch', $_GET) && $_GET['branch'] === 'stable') {
         git log -1
     ');
 }
+
+/**
+ * @todo Change to switch/case but I'm in a rush and just need something to push in the new staging branch
+ */
+if (array_key_exists('branch', $_GET) && $_GET['branch'] === 'staging') {
+    echo 'Nothing to see here! Move along please!!!';
+}
 ?>
 </pre>
