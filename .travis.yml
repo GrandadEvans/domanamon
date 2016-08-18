@@ -28,8 +28,7 @@ install:
 script: phpunit --coverage-html ./tests/php/coverage/html
 
 after_success:
-  - clear
-  - lynx -dump https://domanamon.com/Deploy.php
+  - ./.travis_deployment_script.sh
 
 git:
   depth: 1
@@ -42,6 +41,7 @@ branches:
   only:
     - master
     - stable
+    - staging
     
 #after_failure:
 #after_script:
