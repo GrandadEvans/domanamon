@@ -11,7 +11,9 @@
 |
 */
 
-$factory->define(Domanamon\User::class, function (Faker\Generator $faker) {
+use Domanamon\User;
+
+$factory->define(User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->safeEmail,

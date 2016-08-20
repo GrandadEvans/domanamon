@@ -5,9 +5,9 @@
     "dev": "gulp watch"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "laravel-elixir": "^5.0.0",
-    "laravel-elixir-copy-fonts": "^0.0.2",
-    "bootstrap-sass": "^3.3.0"
+    "bootstrap-sass": "^3.3.0",
+    "exec": "^0.2.1",
+    "gulp": "^3.0",
+    "laravel-elixir": "^5.0"
   }
 }

@@ -21,7 +21,16 @@
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" required="required" class="form-control" name="email" value="{{ old('email') }}" placeholder="eg john@your-domain.com" />
+                                <input
+                                        id="email"
+                                        type="email"
+                                        required="required"
+                                        class="form-control"
+                                        name="email"
+                                        maxlength="254"
+                                        value="{{ old('email') }}"
+                                        placeholder="eg john@your-domain.com"
+                                />
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -69,11 +78,11 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button
+                                        name="login-button"
+                                        id="login-button"
                                         type="submit"
                                         class="btn btn-primary"
-                                >
-                                    <i class="fa fa-btn fa-sign-in"></i> Login
-                                </button>
+                                ><i class="fa fa-btn fa-sign-in"></i> Login</button>
 
                                 <a
                                         class="btn btn-link"

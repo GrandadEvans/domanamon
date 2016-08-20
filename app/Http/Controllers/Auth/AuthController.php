@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Domanamon\Http\Controllers\Auth;
 
 use Domanamon\User;
+use Illuminate\Http\Request;
 use Validator;
 use Domanamon\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Foundation\Auth\{ThrottlesLogins, AuthenticatesAndRegistersUsers};
 
 class AuthController extends Controller
 {
@@ -48,7 +50,8 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        return Validator::make($data,
+            [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:8|confirmed',
@@ -69,4 +72,18 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+
+    /**
+     * This is by default in the AuthenticatesUsers trait but it doesn't have the username down as email address
+     *
+     * @param \Illuminate\Http\Request $request
+     */
+    protected function validateLogin(Request $request)
+    {
+        $this->validate($request, [
+            $this->loginUsername() => 'email|required|max:255', 'password' => 'required',
+        ]);
+    }
+
 }

@@ -58,7 +58,6 @@ class RegistrationTest extends BaseTest
      */
     public function when_the_form_is_filled_in_it_should_create_a_user()
     {
-
         $this
             ->register()
             ->seePageIs('/')
@@ -87,11 +86,14 @@ class RegistrationTest extends BaseTest
      */
     public function make_sure_we_need_unique_email_addresses()
     {
-        $this->register(); // Register for our first account
-        \Auth::logout(); // Logout from the account
+        $this->makeMeAUser([
+            'email' => $this->defaultEmailAddress
+        ]);
 
         $this
-            ->register()
+            ->register([
+                'email' => $this->defaultEmailAddress
+            ])
             ->see('The email has already been taken.') // Make sure we get an error
             ->dontSeeIsAuthenticated();
     }
@@ -141,27 +143,18 @@ class RegistrationTest extends BaseTest
          ->see('The name may not be greater than 255 characters.');
     }
 
-
     /**
-     * Register an account
-     *
-     * @param array $details    An array of details to merge with the defaults
-     *
-     * @return $this    Return $this so that it can be used by the rest of the registration call
+     * @test
      */
-    protected function register(array $details = [])
+    public function make_sure_we_cant_visit_the_registration_page_when_logged_in()
     {
-        $registrationDetails = array_merge([
-            'name' => 'John Evans',
-            'email' => 'john@grandadevans.com',
-            'password' => 'password',
-            'password_confirmation' => 'password'
-        ], $details);
+        $user = $this->makeMeAUser();
 
         $this
+            ->actingAs($user)
             ->visit('/register')
-            ->submitForm('Register', $registrationDetails);
-        
-        return $this;
+            ->seePageIs('/');
     }
+
+
 }
