@@ -167,6 +167,5 @@ class LoginTest extends BaseTest
             ->check('remember')
             ->press('login-button')
             ->seeIsAuthenticated();
-        dd($user->remember);
     }
 }

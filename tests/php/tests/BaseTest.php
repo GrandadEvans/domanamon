@@ -11,7 +11,7 @@ abstract class BaseTest extends TestCase
 {
     use CommonTrait;
     use DatabaseTransactions;
-    use DatabaseMigrations;
+//    use DatabaseMigrations;
 
 
     /**
@@ -69,6 +69,11 @@ abstract class BaseTest extends TestCase
     {
         \Auth::logout();
         return $this;
+    }
+
+
+    public static function setUpBeforeClass()
+    {
     }
 
 
