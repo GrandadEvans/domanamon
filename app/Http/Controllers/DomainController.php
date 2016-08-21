@@ -1,13 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Domanamon\Http\Controllers;
 
+use Domanamon\Domain;
 use Illuminate\Http\Request;
-
-use Domanamon\Http\Requests;
 
 class DomainController extends Controller
 {
+    /**
+     * DomainController constructor.
+     *
+     * Add any middleware and setup params etc
+     */
     public function __construct()
     {
         // We only want authenticated users to access the domains section
@@ -39,11 +45,26 @@ class DomainController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        // persist the new domain
+        $domain = new Domain([
+            'url' => $request->domain
+        ]);
+
+        $user = auth()->user();
+
+        // Associate the user with the domain
+        $user->domains()->save($domain);
+
+        // Display the page
+        return view('Domains.index')
+            ->with('domains', $user->domains)
+            ->with('flashMessage', 'You have successfully added your latest domain')
+            ;
     }
 
     /**

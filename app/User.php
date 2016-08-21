@@ -23,4 +23,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    /**
+     * Set up the relationship with the users domains
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function domains()
+    {
+        return $this->hasMany(Domain::class);
+    }
 }
