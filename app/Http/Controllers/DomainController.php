@@ -8,6 +8,13 @@ use Domanamon\Http\Requests;
 
 class DomainController extends Controller
 {
+    public function __construct()
+    {
+        // We only want authenticated users to access the domains section
+        $this->middleware('auth');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
