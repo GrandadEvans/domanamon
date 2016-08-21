@@ -16,6 +16,7 @@ class DomainTest extends BaseTest
         $this
             ->visit($this->domainPage)
             ->assertResponseOk()
+            ->seeInElement('h2', 'Your Domains')
             ;
     }
 

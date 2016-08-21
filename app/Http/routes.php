@@ -19,6 +19,4 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/domain', function () {
-    return 'ok';
-});
+Route::resource('/domains', DomainController::class);

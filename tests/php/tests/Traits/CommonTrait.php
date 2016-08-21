@@ -16,7 +16,7 @@ Trait CommonTrait
     protected $baseUrl = 'http://domanamon.dev';
     protected $defaultEmailAddress = 'john@grandadevans.com';
     protected $loginPage = '/login';
-    protected $domainPage = '/domain';
+    protected $domainPage = '/domains';
 
 
     /**
