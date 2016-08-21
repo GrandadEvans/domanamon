@@ -5,13 +5,15 @@ declare(strict_types=1);
 namespace  Tests;
 
 use Illuminate\Foundation\Testing\{TestCase, DatabaseMigrations, DatabaseTransactions};
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
 use Tests\Traits\CommonTrait;
 
 abstract class BaseTest extends TestCase
 {
     use CommonTrait;
-    use DatabaseTransactions;
-//    use DatabaseMigrations;
+//    use DatabaseTransactions;
+    use DatabaseMigrations;
 
 
     /**

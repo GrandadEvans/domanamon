@@ -19,6 +19,8 @@ use Tests\BaseTest;
 class DomainTest extends BaseTest
 {
     /**
+     * @todo Not really a unit test so I may move this later
+     *
      * @test
      */
     public function make_sure_we_can_retrieve_the_correct_results()
@@ -27,9 +29,9 @@ class DomainTest extends BaseTest
             'email' => $this->defaultEmailAddress
         ]);
 
-        $this->assertSame($this->defaultEmailAddress, $user->email);
-        $this->assertInstanceOf(Carbon::class, $user->created_at);
-        $this->assertInstanceOf(Carbon::class, $user->updated_at);
+        static::assertSame($this->defaultEmailAddress, $user->email);
+        static::assertInstanceOf(Carbon::class, $user->created_at);
+        static::assertInstanceOf(Carbon::class, $user->updated_at);
     }
 
 }
