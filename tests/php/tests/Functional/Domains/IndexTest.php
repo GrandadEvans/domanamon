@@ -2,11 +2,11 @@
 
 declare(strict_types = 1);
 
-namespace php\tests\Functional;
+namespace php\tests\Functional\Domains;
 
 use Tests\BaseTest;
 
-class DomainTest extends BaseTest
+class IndexTest extends BaseTest
 {
     /**
      * @test

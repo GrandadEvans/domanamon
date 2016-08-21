@@ -32,7 +32,7 @@ class DomainController extends Controller
      */
     public function create()
     {
-        //
+        return view('Domains.create');
     }
 
     /**
