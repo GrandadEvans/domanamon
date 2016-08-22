@@ -42,21 +42,22 @@ class DomainController extends Controller
         return view('Domains.create');
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Domanamon\Http\Requests\Domains\StoreRequest $request
      *
      * @return \Illuminate\Http\Response
      */
     public function store(StoreRequest $request)
     {
+        $user = auth()->user();
+
         // persist the new domain
         $domain = new Domain([
             'url' => $request->domain
         ]);
-
-        $user = auth()->user();
 
         // Associate the user with the domain
         $user->domains()->save($domain);
@@ -64,9 +65,9 @@ class DomainController extends Controller
         // Display the page
         return view('Domains.index')
             ->with('domains', $user->domains)
-            ->with('flashMessage', 'You have successfully added your latest domain')
-            ;
+            ->with('flashMessage', 'You have successfully added your latest domain');
     }
+
 
     /**
      * Display the specified resource.

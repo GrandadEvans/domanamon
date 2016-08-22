@@ -45,7 +45,7 @@ class StoreTest extends BaseTest
     public function make_sure_we_have_an_active_url()
     {
         $user = $this->makeMeAUser();
-        
+
         $this
             ->actingAs($user)
             ->visit($this->domainPage.'/create')
