@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Domanamon\Http\Controllers;
 
 use Domanamon\Domain;
+use Domanamon\Http\Requests\Domains\StoreRequest;
 use Illuminate\Http\Request;
 
 class DomainController extends Controller
@@ -48,7 +49,7 @@ class DomainController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         // persist the new domain
         $domain = new Domain([
