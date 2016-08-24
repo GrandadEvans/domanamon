@@ -1,0 +1,24 @@
+{
+  "name": "Domanamon",
+  "description": "Domain Management and Monitoring tool",
+  "main": "",
+  "authors": [
+    "John Evans <john@grandadevans.com>"
+  ],
+  "license": "GNU-GPL3",
+  "keywords": [
+    "domains"
+  ],
+  "homepage": "https://github.com/GrandadEvans/domanamon",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sweetalert": "1.1.3"
+  }
+}

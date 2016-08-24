@@ -1,6 +1,7 @@
 .idea/
 vendor/
 node_modules/
+bower_components/
 storage/
 public/js/
 public/css/
