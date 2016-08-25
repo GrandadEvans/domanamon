@@ -11,6 +11,7 @@
 |
 */
 
+use Domanamon\Domain;
 use Domanamon\User;
 
 $factory->define(User::class, function (Faker\Generator $faker) {
@@ -20,4 +21,11 @@ $factory->define(User::class, function (Faker\Generator $faker) {
         'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
     ];
+});
+
+$factory->define(Domain::class, function(Faker\Generator $faker): array
+{
+   return [
+       'url' => $faker->domainName
+   ];
 });

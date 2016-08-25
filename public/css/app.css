@@ -34,4 +34,23 @@ img {
 .fa-btn {
   margin-right: 6px; }
 
+.icon-remove {
+  color: darkred; }
+
+.domain-table {
+  margin: 5rem auto; }
+  .domain-table td,
+  .domain-table th {
+    text-align: center;
+    border: 1px solid #CCCCCC;
+    padding: 0.5rem; }
+    .domain-table td:first-of-type,
+    .domain-table th:first-of-type {
+      text-align: left;
+      width: 20rem; }
+  .domain-table a > i {
+    cursor: pointer; }
+  .domain-table thead th {
+    min-width: 5rem; }
+
 /*# sourceMappingURL=app.css.map */

@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Domanamon\Http\Controllers;
 
+use DebugBar\DebugBar;
 use Domanamon\Domain;
 use Domanamon\Http\Requests\Domains\StoreRequest;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class DomainController extends Controller
 {
@@ -29,7 +32,9 @@ class DomainController extends Controller
      */
     public function index()
     {
-        return view('Domains.index');
+        // Display the page
+        return view('Domains.index')
+            ->with('domains', auth()->user()->domains);
     }
 
     /**
@@ -62,10 +67,16 @@ class DomainController extends Controller
         // Associate the user with the domain
         $user->domains()->save($domain);
 
-        // Display the page
-        return view('Domains.index')
-            ->with('domains', $user->domains)
-            ->with('flashMessage', 'You have successfully added your latest domain');
+        if ($request->wantsJson()) {
+            \DebugBar::info($request->wantsJson());
+            return response()
+                ->view('Domains.index')
+                ->with('domains', $user->domains)
+                ->with('success', 'Domain Added.');
+        }
+
+        debugbar()->info($request->wantsJson());
+        return redirect(route('domains.index'), 303);
     }
 
 
@@ -77,7 +88,10 @@ class DomainController extends Controller
      */
     public function show($id)
     {
-        //
+        dd([
+            __METHOD__,
+            Route::currentRouteName()
+        ]);
     }
 
     /**
@@ -88,7 +102,10 @@ class DomainController extends Controller
      */
     public function edit($id)
     {
-        //
+        dd([
+            __METHOD__,
+            Route::current()
+        ]);
     }
 
     /**
@@ -96,21 +113,38 @@ class DomainController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        dd([
+            __METHOD__,
+            Route::current()
+        ]);
     }
+
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param \Domanamon\Domain $domains
+     *
+     * @return string|\Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Domain $domains)
     {
-        //
+        try {
+            $domains->delete();
+        }
+        catch (Exception $e)
+        {
+            /**
+             * @todo Change error message to user friendly one and log error
+             */
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+
+        return response()->json([], 204);
     }
 }

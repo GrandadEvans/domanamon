@@ -29,6 +29,7 @@ class Kernel extends HttpKernel
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \Domanamon\Http\Middleware\VerifyCsrfToken::class,
+            \UxWeb\SweetAlert\ConvertMessagesIntoSweatAlert::class,
         ],
 
         'api' => [

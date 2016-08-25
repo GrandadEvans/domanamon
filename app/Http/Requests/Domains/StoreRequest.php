@@ -26,7 +26,7 @@ class StoreRequest extends Request
     public function rules(): array
     {
         return [
-            'domain' => 'required|activeurl'
+            'domain' => 'required|url'
         ];
     }
 
@@ -37,7 +37,7 @@ class StoreRequest extends Request
     {
         return [
             'domain.required' => 'The Domain Address is required',
-            'domain.activeurl' => 'The Domain Address currently must be an active URL',
+            'domain.url' => 'The Domain Address currently must be a valid URL',
         ];
     }
 }

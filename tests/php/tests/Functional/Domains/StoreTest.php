@@ -11,7 +11,7 @@ class StoreTest extends BaseTest
     /**
      * @test
      */
-    public function make_sure_the_form_submits_ok_and_we_see_the_correct_feedback_displayed()
+    public function make_sure_the_form_submits_ok_and_we_see_the_correct_domain_details()
     {
         $user = $this->makeMeAUser();
 
@@ -20,10 +20,17 @@ class StoreTest extends BaseTest
             ->visit($this->domainPage.'/create')
             ->type('http://domanamon.com', 'domain')
             ->press('add-domain-button')
+            ->followRedirects()
             ->seePageIs($this->domainPage)
-            ->see('You have successfully added your latest domain')
             ->seeInElement('td', 'http://domanamon.com')
-            ->seeLink('Visit http://domanamon.com', 'http://domanamon.com');
+            ->seeElement('a', [
+                'title' => 'Visit http://domanamon.com',
+                'href'  => 'http://domanamon.com'
+            ])
+            ->seeElement('a', [
+                'title' => 'Remove http://domanamon.com',
+                'href'  => route('domains.destroy', ['domains' => 1])
+            ]);
     }
 
     /*
@@ -52,7 +59,7 @@ class StoreTest extends BaseTest
             ->type('domanamon.com', 'domain')
             ->press('add-domain-button')
             ->seePageIs($this->domainPage.'/create')
-            ->see('The Domain Address currently must be an active URL');
+            ->see('The Domain Address currently must be a valid URL');
     }
 
 
@@ -69,6 +76,5 @@ class StoreTest extends BaseTest
             ->press('add-domain-button')
             ->seePageIs($this->domainPage.'/create')
             ->see('The Domain Address is required');
-
     }
 }
