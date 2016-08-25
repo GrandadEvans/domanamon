@@ -26,6 +26,6 @@ $factory->define(User::class, function (Faker\Generator $faker) {
 $factory->define(Domain::class, function(Faker\Generator $faker): array
 {
    return [
-       'url' => $faker->domainName
+       'url' => 'http://' . $faker->domainName
    ];
 });

@@ -100,12 +100,10 @@ class DomainController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Domain $domains)
     {
-        dd([
-            __METHOD__,
-            Route::current()
-        ]);
+        return view('Domains.edit')
+            ->with('domain', $domains);
     }
 
     /**
