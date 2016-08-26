@@ -23,9 +23,10 @@ php:
 install:
   - composer install
   - npm install
+  - bower install
   - gulp
 
-script: phpunit --coverage-html ./tests/php/coverage/html
+script: phpunit
 
 after_success:
   - ./.travis_deployment_script.sh
