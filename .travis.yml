@@ -21,6 +21,7 @@ php:
   - 7.0
 
 install:
+  - npm install -g bower
   - composer install
   - npm install
   - bower install
