@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace Domanamon\Http\Controllers;
 
-use DebugBar\DebugBar;
 use Domanamon\Domain;
 use Domanamon\Http\Requests\Domains\StoreRequest;
 use Exception;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 class DomainController extends Controller
@@ -68,14 +66,12 @@ class DomainController extends Controller
         $user->domains()->save($domain);
 
         if ($request->wantsJson()) {
-            \DebugBar::info($request->wantsJson());
             return response()
                 ->view('Domains.index')
                 ->with('domains', $user->domains)
                 ->with('success', 'Domain Added.');
         }
 
-        debugbar()->info($request->wantsJson());
         return redirect(route('domains.index'), 303);
     }
 
@@ -94,6 +90,7 @@ class DomainController extends Controller
         ]);
     }
 
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -106,6 +103,7 @@ class DomainController extends Controller
             ->with('domain', $domains);
     }
 
+
     /**
      * Update the specified resource in storage.
      *
@@ -114,12 +112,22 @@ class DomainController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreRequest $request, Domain $domains)
     {
-        dd([
-            __METHOD__,
-            Route::current()
-        ]);
+        $domain = $domains;
+        $user = auth()->user();
+
+        $domain->url = $request->domain;
+        $domain->save();
+
+        if ($request->wantsJson()) {
+            return response()
+                ->view('Domains.index')
+                ->with('domains', $user->domains)
+                ->with('success', 'Domain Added.');
+        }
+
+        return redirect(route('domains.index'), 303);
     }
 
 

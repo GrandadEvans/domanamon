@@ -21,7 +21,8 @@ elixir(function(mix) {
             '../../../bower_components/sweetalert/dist/sweetalert.min.js'
         ], 'public/js/plugins.js')
         .babel([
-            'app.es6.js'
+            'Config.es6.js',
+            'App.es6.js'
         ], 'public/js/app.js')
         .sass('app.scss')
         .copy('./resources/images', './public/images/');
