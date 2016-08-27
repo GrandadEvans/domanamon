@@ -150,6 +150,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        // Added in upgrade from Laravel 5.2 to 5.3
+        Illuminate\Notifications\NotificationServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
