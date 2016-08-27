@@ -152,6 +152,7 @@ return [
 
         // Added in upgrade from Laravel 5.2 to 5.3
         Illuminate\Notifications\NotificationServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
 
         /*
          * Application Service Providers...

@@ -6,6 +6,7 @@ namespace Domanamon\Http\Controllers;
 
 use Domanamon\Domain;
 use Domanamon\Http\Requests\Domains\StoreRequest;
+use Domanamon\Http\Requests\Request;
 use Exception;
 use Illuminate\Support\Facades\Route;
 
@@ -28,11 +29,11 @@ class DomainController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         // Display the page
         return view('Domains.index')
-            ->with('domains', auth()->user()->domains);
+            ->with('domains', $request->user()->domains);
     }
 
     /**
@@ -55,7 +56,7 @@ class DomainController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        $user = auth()->user();
+        $user = $request->user();
 
         // persist the new domain
         $domain = new Domain([
@@ -107,15 +108,15 @@ class DomainController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Domanamon\Http\Requests\Domains\StoreRequest $request
+     * @param \Domanamon\Domain $domains
      *
      * @return \Illuminate\Http\Response
      */
     public function update(StoreRequest $request, Domain $domains)
     {
         $domain = $domains;
-        $user = auth()->user();
+        $user = $request->user();
 
         $domain->url = $request->domain;
         $domain->save();
