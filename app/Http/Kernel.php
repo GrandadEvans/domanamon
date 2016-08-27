@@ -30,10 +30,12 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \Domanamon\Http\Middleware\VerifyCsrfToken::class,
             \UxWeb\SweetAlert\ConvertMessagesIntoSweatAlert::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class, // Added as part of upgrade from Laravel 5.2 tp 5.3
         ],
 
         'api' => [
             'throttle:60,1',
+            'bindings'
         ],
     ];
 
@@ -50,5 +52,6 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
         'guest' => \Domanamon\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class, // Part of 5.2->5.3 upgrade
     ];
 }
