@@ -218,6 +218,9 @@ return [
 
         // Laravel DebugBar
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
+        // Upgrade from 5.2->5.3
+        Illuminate\Support\Facades\Notification::class,
     ],
 
 ];
