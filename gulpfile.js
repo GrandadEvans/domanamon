@@ -17,10 +17,10 @@ elixir(function(mix) {
         .sass([
             '../../../bower_components/sweetalert/dev/sweetalert.scss'
         ], 'public/css/plugins.css')
-        .scripts([
+        .webpack([
             '../../../bower_components/sweetalert/dist/sweetalert.min.js'
         ], 'public/js/plugins.js')
-        .babel([
+        .webpack([
             'Config.es6.js',
             'App.es6.js'
         ], 'public/js/app.js')

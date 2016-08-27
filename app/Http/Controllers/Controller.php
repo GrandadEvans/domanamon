@@ -4,9 +4,9 @@ namespace Domanamon\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Foundation\Validation\{ValidatesRequests, AuthorizesRequests};
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class Controller extends BaseController
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    use DispatchesJobs, ValidatesRequests;
 }
