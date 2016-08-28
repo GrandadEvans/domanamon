@@ -36,4 +36,18 @@ class LoginController extends Controller
     {
         $this->middleware('guest', ['except' => 'logout']);
     }
+
+
+    /**
+     * This is by default in the AuthenticatesUsers trait but it doesn't have the username down as email
+     *
+     * @param \Illuminate\Http\Request $request
+     */
+    protected function validateLogin(\Illuminate\Http\Request $request)
+    {
+        $this->validate($request, [
+            $this->username() => 'email|required|max:255', 'password' => 'required',
+        ]);
+    }
+
 }

@@ -15,4 +15,15 @@ class HomeTest extends BaseTest
             ->seeText('DOMANAMON.COM')
             ->seeText('DOMain Management And Monitoring');
     }
+
+
+    /**
+     * @test
+     */
+    public function make_sure_We_have_a_domain_link_in_the_page_header()
+    {
+        $this
+            ->visit('/')
+            ->seeLink('Domains', route('domains.index'));
+    }
 }

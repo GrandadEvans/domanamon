@@ -3,6 +3,7 @@
 namespace Domanamon\Http\Controllers\Auth;
 
 use Domanamon\User;
+use Illuminate\Support\Facades\Request;
 use Validator;
 use Domanamon\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;

@@ -6,7 +6,6 @@ namespace Domanamon\Http\Controllers;
 
 use Domanamon\Domain;
 use Domanamon\Http\Requests\Domains\StoreRequest;
-use Domanamon\Http\Requests\Request;
 use Exception;
 use Illuminate\Support\Facades\Route;
 
@@ -29,11 +28,11 @@ class DomainController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
         // Display the page
         return view('Domains.index')
-            ->with('domains', $request->user()->domains);
+            ->with('domains', auth()->user()->domains);
     }
 
     /**
@@ -98,10 +97,10 @@ class DomainController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Domain $domains)
+    public function edit(Domain $domain)
     {
         return view('Domains.edit')
-            ->with('domain', $domains);
+            ->with('domain', $domain);
     }
 
 
@@ -109,13 +108,12 @@ class DomainController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Domanamon\Http\Requests\Domains\StoreRequest $request
-     * @param \Domanamon\Domain $domains
+     * @param \Domanamon\Domain $domain
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreRequest $request, Domain $domains)
+    public function update(StoreRequest $request, Domain $domain)
     {
-        $domain = $domains;
         $user = $request->user();
 
         $domain->url = $request->domain;
@@ -135,14 +133,14 @@ class DomainController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \Domanamon\Domain $domains
+     * @param \Domanamon\Domain $domain
      *
      * @return string|\Illuminate\Http\Response
      */
-    public function destroy(Domain $domains)
+    public function destroy(Domain $domain)
     {
         try {
-            $domains->delete();
+            $domain->delete();
         }
         catch (Exception $e)
         {

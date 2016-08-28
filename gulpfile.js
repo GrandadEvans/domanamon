@@ -16,16 +16,22 @@ elixir(function(mix) {
     mix
         .sass([
             '../../../bower_components/sweetalert/dev/sweetalert.scss'
-        ], 'public/css/plugins.css')
+        ], './public/css/plugins.css')
+        .sass([
+            'app.scss'
+        ], './public/css/app.css')
+        .copy(
+            './resources/images',
+            './public/images/'
+        )
+
         .webpack([
             '../../../bower_components/sweetalert/dist/sweetalert.min.js'
-        ], 'public/js/plugins.js')
+        ], './public/js/plugins.js')
         .webpack([
             'Config.es6.js',
             'App.es6.js'
-        ], 'public/js/app.js')
-        .sass('app.scss')
-        .copy('./resources/images', './public/images/');
+        ], './public/js/app.js');
 });
 
 
