@@ -34,14 +34,16 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img
-                            src="/images/Domanamon-logo-png8-200x200.png"
-                            alt="Domanamon Logo"
-                            height="200"
-                            width="200"
-                            id="navbar-logo"
-                            class="navbar-logo"
-                    />
+                    @include('partials.picture', [
+                        'filename' => 'Domanamon-logo-png8-200x200.png',
+                        'attributes' => [
+                            'alt' => 'Domanamon Logo',
+                            'height' => '200',
+                            'width' => '200',
+                            'id' => 'navbar-logo',
+                            'class' => 'navbar-logo',
+                        ]
+                    ])
                 </a>
             </div>
 
