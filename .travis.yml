@@ -21,8 +21,11 @@ php:
   - 7.0
 
 install:
-  - npm install -g bower
   - composer install
+  - npm cache clean -f
+  - npm install -g n
+  - npm install -g bower
+  - n stable
   - npm install --only=dev
   - bower install
   - gulp
