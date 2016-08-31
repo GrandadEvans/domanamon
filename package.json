@@ -9,6 +9,7 @@
     "bootstrap-sass": "^3.3.7",
     "exec": "^0.2.1",
     "gulp": "^3.9.1",
+    "gulp-webp": "^2.3.0",
     "jquery": "^3.1.0",
     "laravel-elixir": "^6.0.0-9",
     "laravel-elixir-rollup-official": "^1.0.4",
