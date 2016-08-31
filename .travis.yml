@@ -22,10 +22,10 @@ php:
 
 install:
   - composer install
-  - npm cache clean -f
-  - npm install -g n
+  - sudo npm cache clean -f
+  - sudo n stable
+  - sudo npm install -g n
   - npm install -g bower
-  - n stable
   - npm install --only=dev
   - bower install
   - gulp
