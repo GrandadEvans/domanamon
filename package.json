@@ -4,7 +4,7 @@
     "prod": "gulp --production",
     "dev": "gulp watch"
   },
-  "devDependencies": {
+  "dependencies": {
     "babel-generator": "^6.11.4",
     "bootstrap-sass": "^3.3.7",
     "exec": "^0.2.1",
@@ -18,8 +18,6 @@
     "lodash": "^4.14.0",
     "vue": "^1.0.26",
     "vue-resource": "^0.9.3"
-  },
-  "dependencies": {
     "babel-generator": "^6.14.0"
   }
 }
