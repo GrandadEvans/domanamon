@@ -15,5 +15,6 @@ foreach ($attributes as $attribute => $value) {
 ?>
 <picture>
     <source srcset="{{ $webpPath }}" {!! $attrString !!}>
+    <source srcset="{{ $imagePath }}" {!! $attrString !!}>
     <img src="{{ $imagePath }}" {!! $attrString !!}>
 </picture>
