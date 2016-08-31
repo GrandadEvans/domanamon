@@ -23,9 +23,10 @@ php:
 install:
   - npm install -g bower
   - composer install
-  - npm install
+  - npm install --only=dev
   - bower install
   - gulp
+  - npm install --only=prod
 
 script: phpunit
 
