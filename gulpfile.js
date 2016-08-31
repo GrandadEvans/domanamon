@@ -19,14 +19,14 @@ var Task = Elixir.Task;
  */
 Elixir.extend('convertImages', function(srcDir) {
     // An array of file type to convert to webp
-    let imagesTypes = [
+    var imagesTypes = [
         'jpg',
         'png',
         'gif',
         'jpeg'
     ];
     // A gulp.src path for all the image file
-    const srcFiles = srcDir +'/**/*{' + imagesTypes.join(',') + '}';
+    var srcFiles = srcDir +'/**/*{' + imagesTypes.join(',') + '}';
 
     new Task('convertImages', function () {
         // Iterate through the image files, convert them and put back in the srcDir
