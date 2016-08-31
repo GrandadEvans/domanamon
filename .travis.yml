@@ -24,8 +24,8 @@ php:
 install:
   - composer install
   - sudo npm cache clean -f
-  - sudo n stable
   - sudo npm install -g n
+  - sudo n stable
   - npm install -g bower
   - npm install --only=dev
   - bower install
