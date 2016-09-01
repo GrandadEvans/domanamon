@@ -47,6 +47,7 @@ elixir(function(mix) {
         .sass([
             'app.scss'
         ], './public/css/app.css')
+
         .copy('resources/images', 'public/images/')
 
         .webpack([
@@ -59,11 +60,6 @@ elixir(function(mix) {
         .convertImages('public/images');
 
 });
-
-// gulp.task('default', () =>
-//     gulp.src('src/image.jpg')
-//         .pipe(webp())
-//         .pipe(gulp.dest('dist'))
 
 
 
