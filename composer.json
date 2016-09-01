@@ -1,5 +1,6 @@
 {
     "name": "grandadevans/domanamon",
+    "version": "0.3.0",
     "description": "Domain Monitoring and Management",
     "keywords": ["domain", "tld"],
     "license": "GNU GPL3",
